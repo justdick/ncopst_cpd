@@ -75,7 +75,7 @@ class PaymentController extends Controller
 
         if($response['status'] == true){
             Payment::create([
-                'amount' => 75,
+                'amount' => 1,
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'network' => $data['network'],
