@@ -19,7 +19,7 @@ use App\Http\Controllers\PaymentController;
 |
 */
 Route::get('/', function () {
-    return redirect('/cpd');
+    return redirect('/cpd/create');
 });
 
 Route::resource('/cpd', CpdController::class );
