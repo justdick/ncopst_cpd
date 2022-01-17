@@ -52,7 +52,7 @@ class PaymentController extends Controller
             'email' => 'required|string',
             'phone' => 'required',
             'network' => 'required|string',
-            'staff_id' => 'required|string',
+            'staff_id' => 'required|string|unique:cpds',
             'region' => 'required|string',
             'district' => 'required|string',
             'circuit' => 'sometimes|required|string',
