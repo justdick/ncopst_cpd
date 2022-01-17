@@ -58,13 +58,14 @@ class PaymentController extends Controller
             'circuit' => 'sometimes|required|string',
         ]);
 
+        $amount=1;
         $response = Http::withHeaders([
             "Authorization" => "Bearer 1|ZGOsCt2lPRNuNdIIgf33TDfVaSseN39vshfd0KlV",
             "Content-Type" => "application/json",
             "Accept" => "application/json"
 
         ])->post('https://momo.ncopst.org/api/getotp', [
-            'amount' => 75,
+            'amount' => $amount,
             "phone" =>  $data['phone'],
             "network" => $data['network'],
             "purpose" => 'cpdtest',
@@ -75,7 +76,7 @@ class PaymentController extends Controller
 
         if($response['status'] == true){
             Payment::create([
-                'amount' => 1,
+                'amount' => $amount,
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'network' => $data['network'],
