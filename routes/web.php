@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\PageantController;
 use App\Http\Controllers\PaymentController;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,8 @@ Route::post('/payment_status', [PaymentController::class , 'show'])->name('payme
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// $user = User::create([
+//     'name' => 'admin',
+//     'email' => 'admin@email.com',
+//     'password' => Hash::make('sd08uhn4e')
+// ]);
