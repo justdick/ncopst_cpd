@@ -10,7 +10,7 @@
             <ol>
                 <h6>
                     <li>
-                        @if ($response['data']['display_text'])
+                        @if (isset($response['data']['display_text']))
                             {{$response['data']['display_text']}}
                         @else
                             {{$response['display_text']}}
