@@ -22,7 +22,7 @@
             </ol> <br><br>
 
             {{-- will only show when otp needed if not prompt will show on phone --}}
-            @if ($response['data']['status'] == 'send_otp')
+            @if (isset($response['data']['status']) && $response['data']['status'] == 'send_otp')
                 <form action="{{route('send_otp')}}" method="POST">
                     @csrf
                     <div class="form-group">
