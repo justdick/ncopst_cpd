@@ -65,7 +65,7 @@
 
                 },
                 function(data, status){
-                    if(data != 'Pending'){
+                    if(data == 'Successfull'){
                         alert('Payment ' + data);
 
                         clearInterval(interval);
