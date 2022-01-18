@@ -126,7 +126,7 @@ class PaymentController extends Controller
             $payment->update([
                 'status' => 'Sucessfull'
             ]);
-
+            Log::info($payment->name . ' ' . $payment['name']);
             Cpd::create([
                 'name' => $payment->name,
                 'email' => $payment->email,
