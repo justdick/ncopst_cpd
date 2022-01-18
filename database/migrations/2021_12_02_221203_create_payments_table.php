@@ -23,6 +23,7 @@ class CreatePaymentsTable extends Migration
             $table->string('email');
             $table->string('region');
             $table->string('district');
+            $table->string('circuit')->nullable();
             $table->string('reference');
             $table->string('status')->default('Pending');
             $table->timestamps();
