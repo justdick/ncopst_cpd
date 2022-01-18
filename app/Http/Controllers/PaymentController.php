@@ -116,7 +116,7 @@ class PaymentController extends Controller
     public function callback(Request $request)
     {
         Log::info($request->all());
-        if($request->getClientIp() != ' 198.54.115.156') abort(404);
+        if($request->getClientIp() != '198.54.115.156') abort(404);
 
         $payment = Payment::where('reference', $request->reference)->first();
 
