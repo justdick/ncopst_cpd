@@ -40,9 +40,10 @@ class PaymentController extends Controller
      * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function show(Payment $payment)
+    public function show(Request $request)
     {
-        Log::info($payment->status);
+        $payment = Payment::where('reference', $request->reference)->first();
+
         return $payment->status;
     }
 
