@@ -7,6 +7,7 @@ use App\Models\Vote;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
 class PaymentController extends Controller
@@ -114,6 +115,7 @@ class PaymentController extends Controller
 
     public function callback(Request $request)
     {
+        Log::info($request->all());
         if($request->getClientIp() != ' 198.54.115.156') abort(404);
 
         $payment = Payment::where('reference', $request->reference)->first();
