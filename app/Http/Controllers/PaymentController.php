@@ -123,7 +123,6 @@ class PaymentController extends Controller
             $payment->status  = 'Successfull';
             $payment->save();
 
-            $circuit = $payment->circuit == null ? 'non' : $payment->circuit;
             Cpd::create([
                 'name' => $payment->name,
                 'email' => $payment->email,
@@ -132,7 +131,7 @@ class PaymentController extends Controller
                 'staff_id' => $payment->staff_id,
                 'region' => $payment->region,
                 'district' => $payment->district,
-                'circuit' => $circuit,
+                'circuit' => $payment->circuit,
                 'reference' => $payment->reference,
             ]);
 
