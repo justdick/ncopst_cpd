@@ -115,10 +115,7 @@ class PaymentController extends Controller
 
     public function callback(Request $request)
     {
-        Log::info('Client IP ' .$request->getClientIp());
-        Log::info($request->all());
         if($request->getClientIp() != '198.54.115.156') abort(404);
-        Log::info('Client IP 2 ' .$request->getClientIp());
 
         $payment = Payment::where('reference', $request->reference)->first();
 
@@ -138,14 +135,10 @@ class PaymentController extends Controller
                 'reference' => $payment->reference,
             ]);
 
-        Log::info('CPD PAYMENT SUCCESSFULL AND CREATED');
-
         }else{
             $payment->update([
                 'status' => $request->status
             ]);
-        Log::info($request->all('CPD PAYMENT ERROR OCCURED'));
-
         }
     }
 }
