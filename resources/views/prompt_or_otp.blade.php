@@ -53,20 +53,26 @@
   </section><!-- End Contact Section -->
 
     <script>
-      $(document).ready(function(){
-
+        $(document).ready(function(){
             var interval = null;
 
-            interval = setInterval(updateDiv,5000);
+            interval = setInterval(payment_status,10000);
 
             function payment_status(){
-                $.post("/payment_status",
+                $.post("https://cpd.ncopst.org/payment_status",
                 {
-                    reference: <?php $response['data']['reference'] ?>,
+                    reference: "<?php echo $response['data']['reference'] ?>",
+
                 },
                 function(data, status){
-                    alert("Data: " + data + "\nStatus: " + status);
-                    // clearInterval(interval);
+                    if(data != 'Pending'){
+                        alert('Payment ' + data);
+
+                        clearInterval(interval);
+                        location.assign('https://cpd.ncopst.org/cpd/create');
+                    }
+
+                    //
                 });
             }
         });
