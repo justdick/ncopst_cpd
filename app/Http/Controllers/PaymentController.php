@@ -127,7 +127,18 @@ class PaymentController extends Controller
                 'status' => 'Sucessfull'
             ]);
 
-            Cpd::create($payment);
+            Cpd::create([
+                'name' => $payment->name,
+                'email' => $payment->email,
+                'phone' => $payment->phone,
+                'network' => $payment->network,
+                'staff_id' => $payment->staff_id,
+                'region' => $payment->region,
+                'district' => $payment->district,
+                'circuit' => $payment->circuit,
+                'reference' => $payment->reference,
+            ]);
+
         Log::info('CPD PAYMENT SUCCESSFULL AND CREATED');
 
         }else{
