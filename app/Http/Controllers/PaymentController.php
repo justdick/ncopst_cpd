@@ -123,10 +123,9 @@ class PaymentController extends Controller
         $payment = Payment::where('reference', $request->reference)->first();
 
         if($request->status == 'charge.success'){
-            $payment->update([
-                'status' => 'Sucessfull'
-            ]);
-            Log::info($payment->name . ' ' . $payment['name']);
+            $payment->status  = 'Successfull';
+            $payment->save();
+
             Cpd::create([
                 'name' => $payment->name,
                 'email' => $payment->email,
