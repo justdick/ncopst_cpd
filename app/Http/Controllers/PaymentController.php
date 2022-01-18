@@ -50,7 +50,7 @@ class PaymentController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string',
-            'email' => 'required|string',
+            'email' => 'required|string|unique:cpds',
             'phone' => 'required',
             'network' => 'required|string',
             'staff_id' => 'required|string|unique:cpds',
