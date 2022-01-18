@@ -42,6 +42,7 @@ class PaymentController extends Controller
      */
     public function show(Payment $payment)
     {
+        Log::info($payment->status);
         return $payment->status;
     }
 
