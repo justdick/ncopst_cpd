@@ -7,6 +7,7 @@
         <div class="col-lg-10">
 
           @include('inc.messages')
+          <h2> CPD PAYMENT SYSTEM</h2>
 
           <form action="{{route('pay')}}" method="POST" role="form">
             @csrf
@@ -34,7 +35,7 @@
 
             <label for="email">Email</label>
             <div class="form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" data-rule="minlen:4" data-msg="Please Enter email" required />
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter email used on NTC Portal" data-rule="minlen:4" data-msg="Please Enter email" required />
               <div class="validate"></div>
             </div>
 
