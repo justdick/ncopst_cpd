@@ -61,7 +61,7 @@ class PaymentController extends Controller
             'circuit' => 'sometimes|required|string',
         ]);
 
-        $amount=1;
+        $amount=75;
         $response = Http::withHeaders([
             "Authorization" => "Bearer 1|ZGOsCt2lPRNuNdIIgf33TDfVaSseN39vshfd0KlV",
             "Content-Type" => "application/json",
@@ -71,7 +71,7 @@ class PaymentController extends Controller
             'amount' => $amount,
             "phone" =>  $data['phone'],
             "network" => $data['network'],
-            "purpose" => 'cpdtest',
+            "purpose" => 'cpd',
         ]);
 
         $response = json_decode($response, true);
