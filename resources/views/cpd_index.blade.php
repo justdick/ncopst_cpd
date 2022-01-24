@@ -4,7 +4,7 @@
   <section id="contact" class="contact">
     <div class="container">
       <div class="row mt-5 justify-content-center" data-aos="fade-up">
-        <div class="col-lg-10">
+        <div class="col-sm-12">
 
           @include('inc.messages')
           <h3> NATIONAL COUNCIL OF PRIVATE SCHOOL TEACHERS</h3><br>
