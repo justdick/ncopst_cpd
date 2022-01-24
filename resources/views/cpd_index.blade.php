@@ -72,7 +72,7 @@
 
 
 
-        $('.btn-success').on('click', '.btn-success[data-remote]', function (e) {
+        $('.btn-success').click('.btn-success[data-remote]', function (e) {
 
             if(confirm('Click Ok to confirm')){
                 $.ajaxSetup({
