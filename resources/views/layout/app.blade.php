@@ -25,11 +25,13 @@
   <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
 
+  <link href="cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" >
+
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 
   <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
-
+  <script src="cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
 </head>
 

@@ -9,5 +9,5 @@ class Cpd extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'phone', 'network', 'email', 'staff_id', 'region', 'district', 'circuit', 'reference'];
+    protected $fillable = ['name', 'phone', 'network', 'email', 'staff_id', 'region', 'district', 'circuit', 'reference', 'attended'];
 }

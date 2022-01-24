@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cpd;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use DataTables;
 
 class CpdController extends Controller
 {
@@ -13,9 +14,22 @@ class CpdController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $cpds = Cpd::where('attended', 0)->get();
+            return Datatables::of($cpds)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Attended</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }else{
+            return view('cpd_index');
+        }
+
     }
 
     /**
