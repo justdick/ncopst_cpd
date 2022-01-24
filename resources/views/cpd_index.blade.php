@@ -72,7 +72,7 @@
 
 
         $(document).ready(function(){
-            $('.btn-success').click(function (e) {
+            $('#myTable .btn-success').click(function (e) {
             // alert('ok');
                 if(confirm('Click Ok to confirm')){
                     $.ajaxSetup({
