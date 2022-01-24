@@ -57,6 +57,7 @@
                 {data: 'email', name: 'email'},
                 {data: 'phone', name: 'phone'},
                 {data: 'staff_id', name: 'staff_id'},
+                {data: 'Region', name: 'region'},
                 {data: 'district', name: 'district'},
                 {data: 'circuit', name: 'circuit'},
                 {
