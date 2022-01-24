@@ -84,7 +84,8 @@ class CpdController extends Controller
      */
     public function update(Request $request, Cpd $cpd)
     {
-        //
+        $cpd->attended = 1;
+        $cpd->save();
     }
 
     /**
