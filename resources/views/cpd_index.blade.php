@@ -19,6 +19,7 @@
                             <th>Staff ID</th>
                             <th>Region</th>
                             <th>District</th>
+                            <th>Circuit</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -33,6 +34,7 @@
                             <th>Region</th>
                             <th>District</th>
                             <th>Circuit</th>
+                            <th>Action</th>
                         </tr>
                     </tfoot>
                 </table>
