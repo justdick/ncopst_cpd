@@ -86,6 +86,7 @@ class CpdController extends Controller
     {
         $cpd->attended = 1;
         $cpd->save();
+        return;
     }
 
     /**
