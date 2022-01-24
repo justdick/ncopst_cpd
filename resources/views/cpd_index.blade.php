@@ -81,6 +81,7 @@
                         }
                     });
                     var url = $(this).data('remote');
+                    console.log(url);
                     // confirm then
                     $.ajax({
                         url: url,
