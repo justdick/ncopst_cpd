@@ -7,6 +7,7 @@
   <title>{{config('app.name', 'NCOPST')}}</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicons -->
   <link href="{{asset('assets/images/logo.jpg')}}" rel="icon">
