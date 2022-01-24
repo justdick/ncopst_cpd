@@ -19,7 +19,7 @@
                             <th>Staff ID</th>
                             <th>Region</th>
                             <th>District</th>
-                            <th>Circuit</th>
+                            {{-- <th>Circuit</th> --}}
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -33,7 +33,7 @@
                             <th>Staff ID</th>
                             <th>Region</th>
                             <th>District</th>
-                            <th>Circuit</th>
+                            {{-- <th>Circuit</th> --}}
                             <th>Action</th>
                         </tr>
                     </tfoot>
@@ -59,7 +59,7 @@
                 {data: 'staff_id', name: 'staff_id'},
                 {data: 'region', name: 'region'},
                 {data: 'district', name: 'district'},
-                {data: 'circuit', name: 'circuit'},
+                // {data: 'circuit', name: 'circuit'},
                 {
                     data: 'action',
                     name: 'Attended',
