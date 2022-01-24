@@ -52,8 +52,11 @@
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'name', name: 'name'},
-                {data: 'age', name: 'age'},
-                {data: 'salary', name: 'salary'},
+                {data: 'email', name: 'email'},
+                {data: 'phone', name: 'phone'},
+                {data: 'staff_id', name: 'staff_id'},
+                {data: 'district', name: 'district'},
+                {data: 'circuit', name: 'circuit'},
                 {
                     data: 'action',
                     name: 'Attended',
