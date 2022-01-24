@@ -32,6 +32,7 @@
                             <th>Staff ID</th>
                             <th>Region</th>
                             <th>District</th>
+                            <th>Circuit</th>
                         </tr>
                     </tfoot>
                 </table>
