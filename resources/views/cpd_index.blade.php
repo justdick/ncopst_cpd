@@ -84,7 +84,7 @@
                     // confirm then
                     $.ajax({
                         url: url,
-                        type: 'DELETE',
+                        type: 'PATCH',
                         dataType: 'json',
                         data: {method: '_PATCH', submit: true}
                     }).always(function (data) {
