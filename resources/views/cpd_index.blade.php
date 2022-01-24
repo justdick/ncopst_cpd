@@ -72,7 +72,7 @@
 
 
 
-        $('.attended').on('click', '.btn-success[data-remote]', function (e) {
+        $('.btn-success').on('click', '.btn-success[data-remote]', function (e) {
             e.preventDefault();
 
             if(confirm('Click Ok to confirm')){
