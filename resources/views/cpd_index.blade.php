@@ -51,7 +51,6 @@
             serverSide: true,
             ajax: "{{ route('cpd.index') }}",
             columns: [
-                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
                 {data: 'phone', name: 'phone'},
