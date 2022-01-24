@@ -66,5 +66,26 @@
             ]
             });
         });
+
+
+
+        $('.attended').on('click', '.btn-success[data-remote]', function (e) {
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            var url = $(this).data('remote');
+            // confirm then
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                dataType: 'json',
+                data: {method: '_PATCH', submit: true}
+            }).always(function (data) {
+                $('#myTable').DataTable().draw(false);
+            });
+        });
   </script>
   @endsection
