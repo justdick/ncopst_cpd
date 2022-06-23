@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Cpd;
 use App\Models\Vote;
 use App\Models\Payment;
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
+use PDF;
 
 class PaymentController extends Controller
 {
