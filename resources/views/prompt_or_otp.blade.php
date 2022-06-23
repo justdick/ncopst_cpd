@@ -15,10 +15,12 @@
                         @else
                             {{$response['display_text']}}
                         @endif
+                    </li>
 
+                    <li>
+                        Dont refresh the page after Successfull payment. Your Receipt will download automatically.
                     </li>
                 </h6>
-                {{-- <h6><li>You will be redirected to total vote dashboard after Transaction is complete</li></h6> --}}
             </ol> <br><br>
 
             {{-- will only show when otp needed if not prompt will show on phone --}}
@@ -66,9 +68,10 @@
                 },
                 function(data, status){
                     if(data == 'Successfull'){
-                        alert('Payment ' + data);
+                        alert('Payment ' + data + '. Please wait for receipt download');
 
                         clearInterval(interval);
+
                         location.assign('https://cpd.ncopst.org/cpd/create');
                     }
 

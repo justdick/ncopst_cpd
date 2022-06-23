@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cpd;
 use App\Models\Vote;
 use App\Models\Payment;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -44,6 +45,21 @@ class PaymentController extends Controller
     {
         $payment = Payment::where('reference', $request->reference)->first();
 
+        if($payment->status == 'Successfull'){
+            $pdf = PDF::loadView('receipt');
+
+            $data = [
+                'title' => "Receipt",
+                'date' => date('dd/mm/yyyy h:i:s'),
+                'name' => $payment->name,
+                'amount' => $payment->amount,
+                'email' => $payment->email,
+            ];
+            $pdf->download('receipt.pdf', $data);
+        }
+
+
+
         return $payment->status;
     }
 
@@ -75,7 +91,6 @@ class PaymentController extends Controller
         ]);
 
         $response = json_decode($response, true);
-// dd($response['data']);
 
         if($response['status'] == true){
             Payment::create([
