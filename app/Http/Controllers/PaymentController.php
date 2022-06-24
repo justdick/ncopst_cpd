@@ -93,7 +93,7 @@ class PaymentController extends Controller
         ]);
 
         $response = json_decode($response, true);
-        return $response;
+
         if($response['status'] == true){
             Payment::create([
                 'amount' => $amount,
