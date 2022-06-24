@@ -46,8 +46,6 @@ class PaymentController extends Controller
         $payment = Payment::where('reference', $request->reference)->first();
 
         if($payment->status == 'Successfull'){
-            $pdf = PDF::loadView('receipt');
-
             $data = [
                 'title' => "Receipt",
                 'date' => date('dd/mm/yyyy h:i:s'),
@@ -55,6 +53,10 @@ class PaymentController extends Controller
                 'amount' => $payment->amount,
                 'email' => $payment->email,
             ];
+
+            $pdf = PDF::loadView('receipt', $data);
+
+
             $pdf->download('receipt.pdf', $data);
         }
 
