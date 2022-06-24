@@ -43,8 +43,7 @@ class PaymentController extends Controller
      */
     public function show(Request $request)
     {
-        return $request->reference;
-        $payment = Payment::where('reference', $request->reference)->firstorfail();
+        $payment = Payment::where('reference', $request->reference)->first();
         return $payment;
         if($payment->status == 'Successfull'){
             $data = [
