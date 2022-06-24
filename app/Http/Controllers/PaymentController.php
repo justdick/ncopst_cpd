@@ -56,7 +56,6 @@ class PaymentController extends Controller
 
             $pdf = PDF::loadView('receipt', $data);
 
-
             $pdf->download('receipt.pdf');
         }
 
