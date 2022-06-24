@@ -44,7 +44,7 @@ class PaymentController extends Controller
     public function show(Request $request)
     {
         $payment = Payment::where('reference', $request->reference)->first();
-
+        return $payment;
         if($payment->status == 'Successfull'){
             $data = [
                 'title' => "Receipt",
@@ -57,7 +57,7 @@ class PaymentController extends Controller
             $pdf = PDF::loadView('receipt', $data);
 
 
-            $pdf->download('receipt.pdf', $data);
+            $pdf->download('receipt.pdf');
         }
 
 
