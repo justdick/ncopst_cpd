@@ -72,7 +72,7 @@
 
                         clearInterval(interval);
 
-                        location.assign('https://cpd.ncopst.org/cpd/create');
+                        // location.assign('https://cpd.ncopst.org/cpd/create');
                     }
 
                     //
