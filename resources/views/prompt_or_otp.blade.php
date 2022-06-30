@@ -17,9 +17,9 @@
                         @endif
                     </li>
 
-                    <li>
+                    {{-- <li>
                         Dont refresh the page after Successfull payment. Your Receipt will download automatically.
-                    </li>
+                    </li> --}}
                 </h6>
             </ol> <br><br>
 
@@ -68,7 +68,7 @@
                 },
                 function(data, status){
                     if(data == 'Successfull'){
-                        alert('Payment ' + data + '. Please wait for receipt download');
+                        alert('Payment ' + data);
 
                         clearInterval(interval);
 
