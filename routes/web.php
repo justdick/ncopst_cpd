@@ -25,6 +25,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/cpd', CpdController::class );
+Route::get('/cpd/confirm', [CpdController::class, 'checkAdmin'])->name('checkAdmin');
 
 Route::post('/cpd/pay', [PaymentController::class , 'pay'])->name('pay');
 Route::post('/pageant/sendotp', [PaymentController::class , 'send_otp'])->name('send_otp');
