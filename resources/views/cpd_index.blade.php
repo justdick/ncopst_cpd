@@ -66,7 +66,7 @@
 
 
         $(document).ready(function(){
-            $("#myTable tbody").on("click", "button", function(e){
+            $("#myTable tbody").on("click", "button .attended", function(e){
             // alert('ok');
                 if(confirm('Click Ok to confirm')){
                     $.ajaxSetup({
