@@ -78,7 +78,7 @@ class PaymentController extends Controller
             'circuit' => 'sometimes|required|string',
         ]);
 
-        $amount=50;
+        $amount=1;
         $response = Http::withHeaders([
             "Authorization" => "Bearer 1|ZGOsCt2lPRNuNdIIgf33TDfVaSseN39vshfd0KlV",
             "Content-Type" => "application/json",
