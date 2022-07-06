@@ -23,16 +23,9 @@ class CpdController extends Controller
             ])->get();
             return Datatables::of($cpds)
                 ->addIndexColumn()
-                ->addColumn('action', function($row){
-                    Log::info(request()->query('role'));
-                    if(request()->query('role') == 'admin'){
-                        $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Attended</button>';
+                ->addColumn('status', function($row){
+                        $actionBtn = '<button class="btn btn-success btn-sm attended">Paid</button>';
                         return $actionBtn;
-
-                    }else{
-                        $actionBtn = '<button type="button" class="btn btn-success btn-sm">Paid</button>';
-                        return $actionBtn;
-                    }
                 })
                 ->rawColumns(['action'])
                 ->make(true);
@@ -108,5 +101,25 @@ class CpdController extends Controller
     public function destroy(Cpd $cpd)
     {
         //
+    }
+
+
+    public function checkAdmin()
+    {
+        if ($request->ajax()) {
+            $cpds = Cpd::where([
+                ['attended', '=', 0],['new_cpd', '=', 1]
+            ])->get();
+            return Datatables::of($cpds)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                        $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Attended</button>';
+                        return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }else{
+            return view('markAttendance');
+        }
     }
 }
