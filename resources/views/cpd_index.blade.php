@@ -55,7 +55,7 @@
                 {data: 'district', name: 'district'},
                 // {data: 'circuit', name: 'circuit'},
                 {
-                    data: 'status',
+                    data: 'action',
                     name: 'Paid',
                     orderable: true,
                     searchable: true
