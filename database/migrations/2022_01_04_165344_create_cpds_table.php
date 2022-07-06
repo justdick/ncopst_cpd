@@ -25,6 +25,7 @@ class CreateCpdsTable extends Migration
             $table->string('circuit')->nullable();
             $table->string('reference')->nullable();
             $table->tinyInteger('attended')->default(0);
+            $table->tinyInteger('new_cpd')->default(1);
             $table->timestamps();
         });
     }
