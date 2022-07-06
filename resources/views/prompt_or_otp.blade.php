@@ -10,11 +10,12 @@
             <ol>
                 <h6>
                     <li>
-                        @if (isset($response['data']['display_text']))
+                        {{-- @if (isset($response['data']['display_text']))
                             {{$response['data']['display_text']}}
                         @else
                             {{$response['data']}}
-                        @endif
+                        @endif --}}
+                        Check prompt on your phone to confirm.
                     </li>
 
                     {{-- <li>
