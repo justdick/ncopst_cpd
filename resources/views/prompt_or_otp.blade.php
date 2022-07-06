@@ -18,7 +18,7 @@
                     </li>
 
                     {{-- <li>
-                        Dont refresh the page after Successfull payment. Your Receipt will download automatically.
+                        You will be directed to login page if payment is Successfull
                     </li> --}}
                 </h6>
             </ol> <br><br>
@@ -37,7 +37,6 @@
 
                     <div class="form-group">
                         <button class="btn btn-sm btn-success">Submit</button>
-
                     </div>
                 </form>
             @endif
@@ -72,7 +71,7 @@
 
                         clearInterval(interval);
 
-                        // location.assign('https://cpd.ncopst.org/cpd/create');
+                        location.assign('https://cpd.ncopst.org/login');
                     }
 
                     //
