@@ -21,8 +21,14 @@ class CpdController extends Controller
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Attended</button>';
-                    return $actionBtn;
+                    if(isset($_GET['role']) && $_GET['role'] == 'admin'){
+                        $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Attended</button>';
+                        return $actionBtn;
+
+                    }else{
+                        $actionBtn = '<button type="button" class="btn btn-success btn-sm">Paid</button>';
+                        return $actionBtn;
+                    }
                 })
                 ->rawColumns(['action'])
                 ->make(true);

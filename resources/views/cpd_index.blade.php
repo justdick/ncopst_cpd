@@ -16,8 +16,6 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Staff ID</th>
-                            <th>Region</th>
                             <th>District</th>
                             {{-- <th>Circuit</th> --}}
                             <th>Action</th>
@@ -29,8 +27,6 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Phone</th>
-                            <th>Staff ID</th>
                             <th>Region</th>
                             <th>District</th>
                             {{-- <th>Circuit</th> --}}
@@ -55,8 +51,6 @@
             columns: [
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
-                {data: 'phone', name: 'phone'},
-                {data: 'staff_id', name: 'staff_id'},
                 {data: 'region', name: 'region'},
                 {data: 'district', name: 'district'},
                 // {data: 'circuit', name: 'circuit'},
