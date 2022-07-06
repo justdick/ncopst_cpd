@@ -11,7 +11,7 @@
                 <h6>
                     <li>
                         @if (isset($response['data']['display_text']))
-                            {{$response['data']['display_text']}}
+                            {{$response}}
                         @else
                             {{$response}}
                         @endif
