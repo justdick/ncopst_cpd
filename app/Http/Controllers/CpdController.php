@@ -22,10 +22,11 @@ class CpdController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
                     if(isset($_GET['role']) && $_GET['role'] == 'admin'){
-                        $actionBtn = '<button type="button" class="btn btn-success btn-sm">Paid</button>';
-                        return $actionBtn;
-                    }else{
                         $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Attended</button>';
+                        return $actionBtn;
+
+                    }else{
+                        $actionBtn = '<button type="button" class="btn btn-success btn-sm">Paid</button>';
                         return $actionBtn;
                     }
                 })
