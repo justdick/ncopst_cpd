@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use DataTables;
 use App\Models\Cpd;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
-use DataTables;
 
 class CpdController extends Controller
 {
@@ -23,6 +24,7 @@ class CpdController extends Controller
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
+                    Log::info(request()->query('role'));
                     if(request()->query('role') == 'admin'){
                         $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Attended</button>';
                         return $actionBtn;
