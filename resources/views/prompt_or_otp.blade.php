@@ -13,7 +13,7 @@
                         @if (isset($response['data']['display_text']))
                             {{$response['data']['display_text']}}
                         @else
-                            {{$response}}
+                            {{$response['data']}}
                         @endif
                     </li>
 
