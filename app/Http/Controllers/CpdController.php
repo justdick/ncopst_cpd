@@ -17,7 +17,9 @@ class CpdController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $cpds = Cpd::where(['attended', '=', 0],['new_cpd', '=', 1])->get();
+            $cpds = Cpd::where([
+                ['attended', '=', 0],['new_cpd', '=', 1]
+            ])->get();
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
