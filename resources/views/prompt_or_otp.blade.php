@@ -11,7 +11,7 @@
                 <h6>
                     <li>
                         <?php
-                            die($response) ;
+                            die($response);
                             ?>
                         @if (isset($response['data']['display_text']))
                             {{$response}}
