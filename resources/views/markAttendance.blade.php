@@ -47,7 +47,7 @@
             var table = $('#myTable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('cpd.index') }}",
+            ajax: "{{ route('checkAdmin') }}",
             columns: [
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
