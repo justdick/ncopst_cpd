@@ -10,6 +10,9 @@
             <ol>
                 <h6>
                     <li>
+                        <?php
+                            die($response);
+                            ?>
                         @if (isset($response['data']['display_text']))
                             {{$response}}
                         @else
