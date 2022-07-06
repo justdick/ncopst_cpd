@@ -7,7 +7,8 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li class="{{request()->is('/cpd') ? 'active' : ''}}"><a href="{{route('cpd.index')}}">Home</a></li>
+            <li class="{{request()->is('/cpd/create') ? 'active' : ''}}"><a href="{{route('cpd.index')}}">Home</a></li>
+            <li class="{{request()->is('/cpd') ? 'active' : ''}}"><a href="{{route('cpd.index')}}">Registered Members</a></li>
           </ul>
       </nav>
       <!-- .nav-menu -->
