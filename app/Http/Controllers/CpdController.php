@@ -23,7 +23,7 @@ class CpdController extends Controller
             ])->get();
             return Datatables::of($cpds)
                 ->addIndexColumn()
-                ->addColumn('status', function($row){
+                ->addColumn('action', function($row){
                         $actionBtn = '<button class="btn btn-success btn-sm attended">Paid</button>';
                         return $actionBtn;
                 })
@@ -104,7 +104,7 @@ class CpdController extends Controller
     }
 
 
-    public function checkAdmin()
+    public function checkAdmin(Request $request)
     {
         if ($request->ajax()) {
             $cpds = Cpd::where([
