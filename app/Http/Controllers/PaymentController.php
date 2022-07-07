@@ -54,9 +54,9 @@ class PaymentController extends Controller
                 'email' => $payment->email,
             ];
 
-            $pdf = PDF::loadView('receipt', $data);
+            // $pdf = PDF::loadView('receipt', $data);
 
-            $pdf->download('receipt.pdf', $data);
+            // $pdf->download('receipt.pdf', $data);
         }
 
 
@@ -106,7 +106,7 @@ class PaymentController extends Controller
                 'reference' => $response['data']['reference'],
             ]);
         }
-
+        Log::info($response);
         return view('prompt_or_otp', compact('response'));
     }
 
