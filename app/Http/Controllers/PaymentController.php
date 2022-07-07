@@ -45,19 +45,19 @@ class PaymentController extends Controller
     {
         $payment = Payment::select('name', 'amount', 'email', 'status')->where('reference', $request->reference)->first();
 
-        if($payment->status == 'Successfull'){
-            $data = [
-                'title' => "Receipt",
-                'date' => date('dd/mm/yyyy h:i:s'),
-                'name' => $payment->name,
-                'amount' => $payment->amount,
-                'email' => $payment->email,
-            ];
+        // if($payment->status == 'Successfull'){
+        //     $data = [
+        //         'title' => "Receipt",
+        //         'date' => date('dd/mm/yyyy h:i:s'),
+        //         'name' => $payment->name,
+        //         'amount' => $payment->amount,
+        //         'email' => $payment->email,
+        //     ];
 
-            // $pdf = PDF::loadView('receipt', $data);
+        //     // $pdf = PDF::loadView('receipt', $data);
 
-            // $pdf->download('receipt.pdf', $data);
-        }
+        //     // $pdf->download('receipt.pdf', $data);
+        // }
 
 
 
@@ -86,6 +86,7 @@ class PaymentController extends Controller
 
         ])->post('https://momo.ncopst.org/api/getotp', [
             'amount' => $amount,
+            'email' => $data['email'],
             "phone" =>  $data['phone'],
             "network" => $data['network'],
             "purpose" => 'cpd',
