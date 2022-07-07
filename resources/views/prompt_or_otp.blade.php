@@ -17,9 +17,9 @@
                         @endif
                     </li>
 
-                    {{-- <li>
-                        You will be directed to login page if payment is Successfull
-                    </li> --}}
+                    <li>
+                        Dont refresh this page. You will be directed to registered members page after Successfull payment.
+                    </li>
                 </h6>
             </ol> <br><br>
 
@@ -71,7 +71,7 @@
 
                         clearInterval(interval);
 
-                        location.assign('https://cpd.ncopst.org/login');
+                        location.assign('https://cpd.ncopst.org/cpd');
                     }
 
                     //
