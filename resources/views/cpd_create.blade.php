@@ -7,7 +7,7 @@
         <div class="col-lg-10">
 
           @include('inc.messages')
-          <h3> NATIONAL COUNCIL OF PRIVATE SCHOOL TEACHERS</h3><br>
+          <h3> NCOPST CPD SERVICE PROVIDER</h3><br>
             <h4>CPD PAYMENT SYSTEM</h4>
 
           <form action="{{route('pay')}}" method="POST" role="form">
