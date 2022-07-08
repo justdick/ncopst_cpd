@@ -15,8 +15,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Phone</th>
-                            <th>District</th>
+                            <th>Region</th>
+                            <th>staff_id</th>
                             {{-- <th>Circuit</th> --}}
                             <th>Action</th>
                         </tr>
@@ -28,7 +28,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Region</th>
-                            <th>District</th>
+                            <th>staff_id</th>
                             {{-- <th>Circuit</th> --}}
                             <th>Status</th>
                         </tr>
@@ -52,7 +52,7 @@
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
                 {data: 'region', name: 'region'},
-                {data: 'district', name: 'district'},
+                {data: 'staff_id', name: 'staff_id'},
                 // {data: 'circuit', name: 'circuit'},
                 {
                     data: 'action',
