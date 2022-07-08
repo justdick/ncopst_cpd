@@ -7,7 +7,7 @@
         <div class="col-sm-12">
 
           @include('inc.messages')
-          <h3> NATIONAL COUNCIL OF PRIVATE SCHOOL TEACHERS</h3><br>
+          <h3> NCOPST CPD SERVICE PROVIDER </h3><br>
             <h4>CPD PAYMENT LIST</h4>
 
             <table id="myTable" class="display table table-responsive" style="width:100%">
