@@ -2,7 +2,7 @@
     <div class="container d-flex align-items-center">
 
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="{{route('cpd.index')}}" class="logo mr-aufto"><img src="{{asset('assets/images/logo.jpg')}}" alt="" class="img-fluid"></a>
+      <a href="{{route('cpd.index')}}" class="logo mr-aufto"><img src="{{asset('assets/images/logo.jpeg')}}" alt="" class="img-fluid"></a>
       <h1 class="logo mr-auto"><a href="{{route('cpd.index')}}"><span>NC</span>OPST</a></h1>
 
       <nav class="nav-menu d-none d-lg-block">
