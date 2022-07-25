@@ -25,7 +25,7 @@ class CpdController extends Controller
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    if($this['attended'] == 0){
+                    if($row['attended'] == 0){
                         $actionBtn = '<button class="btn btn-success btn-sm attended">Paid</button>';
                         return $actionBtn;
                     }
