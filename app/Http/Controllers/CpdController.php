@@ -19,13 +19,20 @@ class CpdController extends Controller
     {
         if ($request->ajax()) {
             $cpds = Cpd::where([
-                ['attended', '=', 0],['new_cpd', '=', 1],['district', '!=', 'aboura_aseibu_kwaman_kesse']
+                ['new_cpd', '=', 1],['district', '!=', 'aboura_aseibu_kwaman_kesse']
             ])->get();
+
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
+                    if($this['attended'] == 0){
                         $actionBtn = '<button class="btn btn-success btn-sm attended">Paid</button>';
                         return $actionBtn;
+                    }
+
+                    $actionBtn = '<button class="btn btn-success btn-sm">Paid</button>';
+                    return $actionBtn;
+
                 })
                 ->rawColumns(['action'])
                 ->make(true);

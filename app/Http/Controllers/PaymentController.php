@@ -77,13 +77,13 @@ class PaymentController extends Controller
             'district' => 'required|string',
             'circuit' => 'sometimes|required|string',
         ]);
-        
+
         if($data['district'] == 'aboura_aseibu_kwaman_kesse'){
             $amount=75;
         } else {
             $amount=50;
         }
-        
+
         $response = Http::withHeaders([
             "Authorization" => "Bearer 1|ZGOsCt2lPRNuNdIIgf33TDfVaSseN39vshfd0KlV",
             "Content-Type" => "application/json",
@@ -112,7 +112,7 @@ class PaymentController extends Controller
                 'reference' => $response['data']['reference'],
             ]);
         }
-        Log::info($response);
+        // Log::info($response);
         return view('prompt_or_otp', compact('response'));
     }
 
