@@ -19,20 +19,13 @@ class CpdController extends Controller
     {
         if ($request->ajax()) {
             $cpds = Cpd::where([
-                ['new_cpd', '=', 1],['district', '!=', 'aboura_aseibu_kwaman_kesse']
+                ['attended', '=', 0],['new_cpd', '=', 1],['district', '!=', 'aboura_aseibu_kwaman_kesse']
             ])->get();
-
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    if($row['attended'] == 0){
                         $actionBtn = '<button class="btn btn-success btn-sm attended">Paid</button>';
                         return $actionBtn;
-                    }
-
-                    $actionBtn = '<button class="btn btn-success btn-sm">Paid</button>';
-                    return $actionBtn;
-
                 })
                 ->rawColumns(['action'])
                 ->make(true);
@@ -114,14 +107,19 @@ class CpdController extends Controller
     public function checkAdmin(Request $request)
     {
         if ($request->ajax()) {
-            $cpds = Cpd::where([
-                ['attended', '=', 0],['new_cpd', '=', 1]
-            ])->get();
+            $cpds = Cpd::where([['new_cpd', '=', 1]])->get();
+
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                        $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Attended</button>';
+                    if($row->attended == 0){
+                        $actionBtn = '<button data-remote="'. route('cpd.update', $row->id) . '" class="btn btn-success btn-sm attended">Mark Attended</button>';
                         return $actionBtn;
+                    }
+
+                    $actionBtn = '<button class="btn btn-success btn-sm attended">Attended</button>';
+                    return $actionBtn;
+
                 })
                 ->rawColumns(['action'])
                 ->make(true);
