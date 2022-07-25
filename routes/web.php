@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CpdController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,10 @@ use Illuminate\Support\Facades\Hash;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::post('/cpd/login', [LoginController::class, 'cpdLogin'])->name('cpd.login');
+Route::view('/cpd/login', 'auth.cpdLogin')->name('cpd.loginForm');
+
 Route::get('/', function () {
     return redirect('/cpd/create');
 });
@@ -32,9 +37,9 @@ Route::post('/pageant/sendotp', [PaymentController::class , 'send_otp'])->name('
 Route::post('/callback', [PaymentController::class , 'callback'])->name('callback');
 Route::post('/payment_status', [PaymentController::class , 'show'])->name('payment_status');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // $user = User::create([
 //     'name' => 'admin',
 //     'email' => 'admin@email.com',
