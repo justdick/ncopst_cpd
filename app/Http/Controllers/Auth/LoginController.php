@@ -47,6 +47,7 @@ class LoginController extends Controller
         ]);
         $user = Cpd::where('staff_id', $request->staff_id)->first();
         if($user){
+            session(['staff_id' => $request->staff_id]);
             return redirect('/user/dashboard');
         }
 

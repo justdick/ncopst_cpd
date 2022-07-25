@@ -37,7 +37,11 @@ Route::post('/pageant/sendotp', [PaymentController::class , 'send_otp'])->name('
 Route::post('/callback', [PaymentController::class , 'callback'])->name('callback');
 Route::post('/payment_status', [PaymentController::class , 'show'])->name('payment_status');
 
-// Auth::routes();
+Route::middleware('cpdauth')->group(function(){
+    Route::view('/user/dashboard', 'exam');
+});
+
+        // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // $user = User::create([
