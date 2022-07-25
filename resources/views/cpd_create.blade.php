@@ -52,6 +52,7 @@
                   <option value=""></option>
                   <option value="ashanti">Ashanti</option>
                   <option value="central">Central</option>
+                  <option value="Accra">Accra</option>
               </select>
             </div>
 
@@ -105,7 +106,7 @@
 
                     case 'central':
                         district.html(
-                            `<option value="aboura_aseibu_kwaman_kesse">Aboura Aseibu Kwaman Kesse</option>`
+                            `<option value="aboura_aseibu_kwaman_kesse">Abura Aseibu Kwaman Kesse</option>`
                         );
                         divcircuit.show();
 
@@ -118,6 +119,27 @@
                             <option value="GYABANKROM">GYABANKROM</option>
                             <option value="MOREE">MOREE</option>
                             <option value="ABURA DUNKWA">ABURA DUNKWA</option>`
+                        );
+
+                        circuit.prop('required', true);
+                        circuit.attr('name', 'circuit');
+
+                        break;
+                        
+                    case 'Accra':
+                        district.html(
+                            `<option value="La Dadekotopon">La Dadekotopon</option>`
+                        );
+                        divcircuit.show();
+
+                        circuit.html(
+                            `<option value=""></option>
+                            <option value="Adjetey">Adjetey</option>
+                            <option value="Arakan">Arakan</option>
+                            <option value="Adobetor">Adobetor</option>
+                            <option value="Emmaus">Emmaus</option>
+                            <option value="Rangoon Camp">Rangoon Camp</option>
+                            <option value="Manledada">Manledada</option>`
                         );
 
                         circuit.prop('required', true);

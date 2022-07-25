@@ -69,7 +69,7 @@ class PaymentController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string',
-            'email' => 'bail|required|string|unique:cpds',
+            'email' => 'bail|required|email|string|unique:cpds',
             'phone' => 'required',
             'network' => 'required|string',
             'staff_id' => 'required|string|unique:cpds',
@@ -77,8 +77,13 @@ class PaymentController extends Controller
             'district' => 'required|string',
             'circuit' => 'sometimes|required|string',
         ]);
-
-        $amount=50;
+        
+        if($data['district'] == 'aboura_aseibu_kwaman_kesse'){
+            $amount=75;
+        } else {
+            $amount=50;
+        }
+        
         $response = Http::withHeaders([
             "Authorization" => "Bearer 1|ZGOsCt2lPRNuNdIIgf33TDfVaSseN39vshfd0KlV",
             "Content-Type" => "application/json",

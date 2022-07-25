@@ -16,8 +16,8 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Region</th>
+                            <th>District</th>
                             <th>staff_id</th>
-                            {{-- <th>Circuit</th> --}}
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -28,6 +28,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Region</th>
+                            <th>District</th>
                             <th>staff_id</th>
                             {{-- <th>Circuit</th> --}}
                             <th>Status</th>
@@ -52,6 +53,7 @@
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
                 {data: 'region', name: 'region'},
+                {data: 'district', name: 'district'},
                 {data: 'staff_id', name: 'staff_id'},
                 // {data: 'circuit', name: 'circuit'},
                 {
@@ -60,7 +62,8 @@
                     orderable: true,
                     searchable: true
                 },
-            ]
+            ],
+           
             });
         });
 
