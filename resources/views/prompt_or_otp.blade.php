@@ -12,14 +12,18 @@
                     <li>
                         @if (isset($response['data']['display_text']))
                             {{$response['data']['display_text']}}
+                            <li>
+                                Please Check my Approvals (*170#) if you didnt get PIN Prompt.
+                            </li>
+                            <li>
+                                <a href="https://cpd.ncopst.org/cpd"> Click for registered members page. After Successful Payment</a>
+                            </li>
                         @else
                             {{$response['data']['message']}}
                         @endif
                     </li>
 
-                    <li>
-                        Dont refresh this page. You will be directed to registered members page after Successfull payment.
-                    </li>
+
                 </h6>
             </ol> <br><br>
 
