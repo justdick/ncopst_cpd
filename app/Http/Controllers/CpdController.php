@@ -19,7 +19,7 @@ class CpdController extends Controller
     {
         if ($request->ajax()) {
             $cpds = Cpd::where([
-                ['attended', '=', 0],['new_cpd', '=', 1],['district', '!=', 'aboura_aseibu_kwaman_kesse']
+                ['attended', '=', 0],['new_cpd', '=', 1]
             ])->get();
             return Datatables::of($cpds)
                 ->addIndexColumn()
