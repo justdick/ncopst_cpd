@@ -20,7 +20,9 @@ class CpdController extends Controller
         if ($request->ajax()) {
             $cpds = Cpd::where([
                 ['attended', '=', 0],['new_cpd', '=', 1]
-            ])->get();
+            ])->join('payments', 'cpd.reference', '=', 'payments.reference')
+            ->get();
+
             return Datatables::of($cpds)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){

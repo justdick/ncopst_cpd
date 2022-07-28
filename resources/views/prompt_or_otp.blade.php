@@ -16,7 +16,7 @@
                                 Please Check my Approvals (*170#) if you didnt get PIN Prompt.
                             </li>
                             <li>
-                                <a href="https://cpd.ncopst.org/cpd"> Click for registered members page. After Successful Payment</a>
+                                <a href="https://cpd.ncopst.org/cpd"> Click Here for registered members page. After Successful Payment</a>
                             </li>
                         @else
                             {{$response['data']['message']}}
