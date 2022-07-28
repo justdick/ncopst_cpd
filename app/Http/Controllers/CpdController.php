@@ -20,7 +20,7 @@ class CpdController extends Controller
         if ($request->ajax()) {
             $cpds = Cpd::where([
                 ['attended', '=', 0],['new_cpd', '=', 1]
-            ])->join('payments', 'cpd.reference', '=', 'payments.reference')
+            ])->join('payments', 'cpds.reference', '=', 'payments.reference')
             ->get();
 
             return Datatables::of($cpds)
