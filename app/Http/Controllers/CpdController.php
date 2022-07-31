@@ -20,8 +20,7 @@ class CpdController extends Controller
         if ($request->ajax()) {
             $cpds = Cpd::where([
                 ['new_cpd', '=', 1],
-            ])->orderBy('email', 'asc')
-            ->get();
+            ])->get();
 
             return Datatables::of($cpds)
                 ->addIndexColumn()
