@@ -14,7 +14,7 @@ class Cpd extends Model
     ];
 
     protected $cast = [
-        'created_at' => 'yyyy-mm-dd hh:ii:ss',
+        'created_at' => 'datetime',
     ];
 
     public function payments()
