@@ -13,7 +13,9 @@ class Cpd extends Model
         'name', 'phone', 'network', 'email', 'staff_id', 'region', 'district', 'circuit', 'reference', 'attended'
     ];
 
-    protected $dateFormat = 'Y-m-d H:i:s';
+    protected $cast = [
+        'created_at' => 'yyyy-mm-dd hh:ii:ss',
+    ];
 
     public function payments()
     {
