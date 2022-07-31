@@ -15,7 +15,7 @@ class Cpd extends Model
 
     public function getCreatedAtFormattedAttribute()
     {
-        return $this->created_at->format('yyyy-mm-dd H:i:s');
+        return $this->created_at->format('yyyy-mm-dd');
     }
 
     public function payments()
