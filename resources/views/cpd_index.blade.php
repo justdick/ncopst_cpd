@@ -57,7 +57,7 @@
                 {
                     data: 'action',
                     name: 'Paid',
-                    order: [[4, 'desc']],
+                    order: true,
                     searchable: true
                 },
             ],
