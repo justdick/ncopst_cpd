@@ -17,7 +17,7 @@
                             <th>Email</th>
                             <th>Region</th>
                             <th>District</th>
-                            <th>Amount</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -29,7 +29,7 @@
                             <th>Email</th>
                             <th>Region</th>
                             <th>District</th>
-                            <th>Amount</th>
+                            <th>Date</th>
                             <th>Status</th>
                         </tr>
                     </tfoot>
@@ -53,7 +53,7 @@
                 {data: 'email', name: 'email'},
                 {data: 'region', name: 'region'},
                 {data: 'district', name: 'district'},
-                {data: 'amount', name: 'amount'},
+                {data: 'created_at', name: 'date'},
                 {
                     data: 'action',
                     name: 'Paid',
