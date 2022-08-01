@@ -106,7 +106,7 @@
 
                     case 'central':
                         district.html(
-                            `<option value="aboura_aseibu_kwaman_kesse">Abura Aseibu Kwaman Kesse</option>`
+                            `<option value="abura_aseibu_kwaman_kesse">Abura Aseibu Kwaman Kesse</option>`
                         );
                         divcircuit.show();
 
@@ -125,7 +125,7 @@
                         circuit.attr('name', 'circuit');
 
                         break;
-                        
+
                     case 'Accra':
                         district.html(
                             `<option value="La Dadekotopon">La Dadekotopon</option>`
